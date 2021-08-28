@@ -2,12 +2,13 @@ const express = require("express");
 const handlebars = require("express-handlebars");
 const app = express();
 
-app.set("view engine", "handlebars");
+app.set("view engine", "hbs");
 
 app.engine(
-  "handlebars",
+  "hbs",
   handlebars({
     layoutsDir: __dirname + "/views/layouts",
+    extname: "hbs",
   })
 );
 
