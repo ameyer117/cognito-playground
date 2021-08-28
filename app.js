@@ -9,13 +9,18 @@ app.engine(
   handlebars({
     layoutsDir: __dirname + "/views/layouts",
     extname: "hbs",
+    defaultLayout: "index",
   })
 );
 
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render("main", { layout: "index" });
+  res.render("main");
+});
+
+app.get("/about", (req, res) => {
+  res.render("about");
 });
 
 app.listen(3000, () => {
